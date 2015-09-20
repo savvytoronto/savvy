@@ -18,6 +18,6 @@ module.exports = {
     uri:    process.env.MONGOLAB_URI ||
             process.env.MONGOHQ_URL ||
             process.env.OPENSHIFT_MONGODB_DB_URL+process.env.OPENSHIFT_APP_NAME ||
-            'mongodb://<getsavvy>:<savvyprod>@ds039073.mongolab.com:39073/savvy-prod'
+            'mongodb://getsavvy:savvy1234@ds039073.mongolab.com:39073/savvy-prod'
   }
 };
