@@ -40,7 +40,7 @@ Savvy
 ```npm install -g bower``` 
 ```npm install```
 ```bower install```
-7. [Install grunt](http://gruntjs.com/getting-started) in webplatform directory 
+7. [Install grunt](http://gruntjs.com/getting-started) in app directory 
 
 ### Build
 Build system uses grunt. Run the following command to build
@@ -61,7 +61,7 @@ There is a git-commit-template  that should be used with each commit.
 ```git config --global commit.template /path/to/git-commit-template.txt```
 If you want to use different commit tempates for different projects then you must configure them individually for each project.
 ```
-cd <path-to-webplatform>
+cd <path-to-app>
 git config commit.template git-commit-template.txt
 ```
 ##### Commit code
