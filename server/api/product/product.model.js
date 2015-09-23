@@ -10,16 +10,13 @@ var ProductSchema = new Schema({
   code: {type: String},
   qty: {type: Number},
   price: {type: Number},
-  imageUrl: {type :String},
-  created_at: {type: Date},
+  image_url: {type: String},
+  store_id: {type: Schema.Types.ObjectId, ref: 'Store'},
   updated_at: {type: Date}
 });
 
 ProductSchema.pre('save', function(next) {
   this.updated_at = timeNow;
-  if(!this.created_at) {
-    this.created_at = timeNow;
-  }
   next();
 });
 

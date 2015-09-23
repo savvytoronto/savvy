@@ -8,20 +8,22 @@ var timeNow = new Date();
 var CampaignSchema = new Schema({
   name: {type: String, required: true, unique: true},
   is_active: {type: Boolean},
-  collections: [{type: mongoose.Schema.Types.ObjectId, ref:'Collection'}],
-  discount_lower_bound: {type: Number, min: 1, max: 100},
-  discount_upper_bound: {type: Number, min: 1, max: 100},
-  created_by: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
-  created_at: {type: Date},
+  budget: {type: Number},
+  collection_ids: [{type: Schema.Types.ObjectId, ref: 'Collection'}],
+  type: {type: String, enum: ['Discrete', 'Continuous', 'Staggered']},
+  discount_lower_bound: {type: Number, min: 1, max: 100}, //Discount can only be %
+  discount_upper_bound: {type: Number, min: 1, max: 100}, //Discount can only be %
+  created_by: {type: Schema.Types.ObjectId, ref: 'User'},
+  campaign_start_date: {type: Date},
+  campaign_end_date: {type: Date},
+  campaign_start_date_next: {type: Date}, //To handle repeat frequency
+  store_id: {type: Schema.Types.ObjectId, ref: 'Store'},
   updated_at: {type: Date}
 });
 
 CampaignSchema.pre('save', function(next) {
   this.updated_at = timeNow;
-  if(!this.created_at) {
-      this.created_at = timeNow;
-  }
   next();
 });
 
-module.exports = mongoose.model('Collection', CampaignSchema);
+module.exports = mongoose.model('Campaign', CampaignSchema);
