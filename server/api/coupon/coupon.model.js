@@ -12,8 +12,9 @@ var CouponSchema = new Schema({
   title_primary: {type: String}, //Corresponds to first title on the generated coupon
   title_secondary: {type: String}, //Corresponds to second title on the generated coupon
   campaign_id: {type: Schema.Types.ObjectId, ref: 'Campaign'},
+  campaign_budget: {type: Number}, //Ugly normalization. Might be useful on the iPhone side
   store_id: {type: Schema.Types.ObjectId, ref: 'Store'},
-  product_ids: [{type: Schema.Types.ObjectId, ref: 'Product'}]
+  product_skus: [{type: String}]
 });
 
 module.exports = mongoose.model('Coupon', CouponSchema);
