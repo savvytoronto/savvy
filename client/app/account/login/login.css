@@ -106,6 +106,5 @@ input[disabled], input[disabled]:hover {
 }
 
 .nextButton .btn {
-    height:44px;
     font-size:18px;
 }

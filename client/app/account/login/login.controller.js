@@ -24,7 +24,7 @@ angular.module('savvyAppApp')
       }
     };
 
-    $scope.validEmail = function (email) {
+    var validEmail = function (email) {
       var valid = false;
       if (email.indexOf('@') > 0) {
         valid = true;
@@ -36,7 +36,12 @@ angular.module('savvyAppApp')
       return true;
     };
 
-    $scope.checkUser = function (email) {
+    $scope.checkUser = function () {
+      console.log($scope.email);
+      if (!$scope.email) {
+        $scope.emailError = true;
+        return;
+      }
 
       $scope.loadUser = 'load';
       //api call here
@@ -44,7 +49,7 @@ angular.module('savvyAppApp')
       //when successful
       $timeout(function () {
         $scope.loadUser = 'success';
-      }, 3000);
+      }, 2000);
     };
 
 
