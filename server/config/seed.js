@@ -30,7 +30,7 @@ Store.find({}).remove(function() {
         newStore = this_store;
         generateUser(newStore, function () {
           generateCampaign(function () {
-            Campaign.find({}).remove(function() {
+            Coupon.find({}).remove(function() {
               Coupon.create({
                 code: 'yhd7iw',
                 is_active: false,
