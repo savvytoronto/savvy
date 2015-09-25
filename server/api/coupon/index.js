@@ -5,6 +5,7 @@ var controller = require('./coupon.controller');
 
 var router = express.Router();
 
+router.post('/app', controller.getCouponForApp);
 router.get('/', controller.index);
 router.get('/:id', controller.show);
 router.post('/', controller.create);

@@ -43,7 +43,7 @@ exports.update = function(req, res) {
   Collection.findById(req.params.id, function (err, collection) {
     if (err) { return handleError(res, err); }
     if(!collection) { return res.status(404).send('Not Found'); }
-    var updated = _.merge(collection, req.body);
+    var updated = _.extend(collection, req.body);
     updated.save(function (err) {
       if (err) { return handleError(res, err); }
       return res.status(200).json(collection);

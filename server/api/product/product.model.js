@@ -12,11 +12,16 @@ var ProductSchema = new Schema({
   price: {type: Number},
   image_url: {type: String},
   store_id: {type: Schema.Types.ObjectId, ref: 'Store'},
-  updated_at: {type: Date}
+  d:{
+    c: Date,  //created
+    m: Date    // modified (updated)
+  }
 });
 
 ProductSchema.pre('save', function(next) {
-  this.updated_at = timeNow;
+  this.d = {
+    c: timeNow
+  };
   next();
 });
 

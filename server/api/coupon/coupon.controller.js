@@ -20,6 +20,24 @@ exports.index = function(req, res) {
   });
 };
 
+exports.getCouponForApp = function (req, res) {
+  if (!req.body || !req.body.clienCouponCode) {
+    handleError(res, 'bad request');
+  }
+
+  Coupon.findOne({
+    code: req.body.clienCouponCode
+  }, function (err, this_coupon) {
+    if (err) {
+      handleError(res, err);
+    }
+    if (!this_coupon) {
+      return res.status(404).send('no coupon found');
+    }
+    return res.status(200).json(this_coupon);
+  });
+};
+
 // Get a single coupon
 exports.show = function(req, res) {
   Coupon.findById(req.params.id, function (err, coupon) {
@@ -43,7 +61,7 @@ exports.update = function(req, res) {
   Coupon.findById(req.params.id, function (err, coupon) {
     if (err) { return handleError(res, err); }
     if(!coupon) { return res.status(404).send('Not Found'); }
-    var updated = _.merge(coupon, req.body);
+    var updated = _.extend(coupon, req.body);
     updated.save(function (err) {
       if (err) { return handleError(res, err); }
       return res.status(200).json(coupon);

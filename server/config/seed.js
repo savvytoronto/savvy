@@ -5,45 +5,114 @@
 
 'use strict';
 
-var Thing = require('../api/thing/thing.model');
+var Campaign = require('../api/campaign/campaign.model');
 var User = require('../api/user/user.model');
+var Store = require('../api/store/store.model');
+var Coupon = require('../api/coupon/coupon.model');
 
-Thing.find({}).remove(function() {
-  Thing.create({
-    name : 'Development Tools',
-    info : 'Integration with popular tools such as Bower, Grunt, Karma, Mocha, JSHint, Node Inspector, Livereload, Protractor, Jade, Stylus, Sass, CoffeeScript, and Less.'
-  }, {
-    name : 'Server and Client integration',
-    info : 'Built with a powerful and fun stack: MongoDB, Express, AngularJS, and Node.'
-  }, {
-    name : 'Smart Build System',
-    info : 'Build system ignores `spec` files, allowing you to keep tests alongside code. Automatic injection of scripts and styles into your index.html'
-  },  {
-    name : 'Modular Structure',
-    info : 'Best practice client and server structures allow for more code reusability and maximum scalability'
-  },  {
-    name : 'Optimized Build',
-    info : 'Build process packs up your templates as a single JavaScript payload, minifies your scripts/css/images, and rewrites asset names for caching.'
-  },{
-    name : 'Deployment Ready',
-    info : 'Easily deploy your app to Heroku or Openshift with the heroku and openshift subgenerators'
-  });
-});
 
-User.find({}).remove(function() {
-  User.create({
-    provider: 'local',
-    name: 'Test User',
-    email: 'test@test.com',
-    password: 'test'
-  }, {
-    provider: 'local',
-    role: 'admin',
-    name: 'Admin',
-    email: 'admin@admin.com',
-    password: 'admin'
+var newUser,
+    newCampaign,
+    newStore;
+
+Store.find({}).remove(function() {
+  Store.create({
+    name: 'Banana Republic',
+    description: 'a fashion store',
+    image_url: 'assets/images/br.JPG'
   }, function() {
-      console.log('finished populating users');
+      Store.findOne({
+        name: 'Banana Republic'
+      }, function(err, this_store) {
+        if (err) {
+
+        }
+        newStore = this_store;
+        generateUser(newStore, function () {
+          generateCampaign(function () {
+            Campaign.find({}).remove(function() {
+              Coupon.create({
+                code: 'yhd7iw',
+                is_active: false,
+                discount_percent: 23, //Discount can only be %
+                title_primary: 'This is primary title', //Corresponds to first title on the generated coupon
+                title_secondary: 'This is secondary title', //Corresponds to second title on the generated coupon
+                campaign_id: newCampaign._id,
+                campaign_budget: newCampaign.budget, //Ugly normalization. Might be useful on the iPhone side
+                store_id: newStore._id,
+                product_skus: []
+              });
+            });
+          });
+        });
+      });
     }
   );
 });
+
+var generateUser = function (store, cb) {
+  User.find({}).remove(function() {
+    User.create({
+      provider: 'local',
+      username: 'breaton',
+      email: 'test@test.com',
+      password: 'bananarepublic',
+      store_id: store._id
+    }, {
+      provider: 'local',
+      role: 'admin',
+      username: 'Admin',
+      email: 'admin@admin.com',
+      password: 'admin',
+      store_id: store._id
+    }, function() {
+        User.findOne({
+          username: 'breaton'
+        }, function (err, thisUser) {
+          if (err) {
+
+          }
+          newUser = thisUser;
+          return cb();
+        });
+        console.log('finished populating users');
+      }
+    );
+  });
+}
+
+
+
+var today = new Date();
+
+var generateCampaign = function (cb) {
+  Campaign.find({}).remove(function() {
+    Campaign.create({
+      name: 'July Campaign',
+      is_active: false,
+      budget: 300,
+      collections: [],
+      type: 'Discrete',
+      discount_lb: 20, //Discount can only be %
+      discount_ub: 50, //Discount can only be %
+      created_by: newUser._id,
+      campaign_start: today,
+      campaign_end: today,
+      campaign_next: today, //To handle repeat frequency
+      store_id: newStore._id,
+      d:{
+        c: today
+      }
+    }, function () {
+      Campaign.findOne({
+        name: 'July Campaign'
+      }, function(err, this_campaign) {
+        if(err) {
+
+        }
+        newCampaign = this_campaign;
+        return cb();
+      })
+    });
+});
+}
