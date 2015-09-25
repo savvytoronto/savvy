@@ -14,7 +14,7 @@ var CouponSchema = new Schema({
   campaign_id: {type: Schema.Types.ObjectId, ref: 'Campaign'},
   campaign_budget: {type: Number}, //Ugly normalization. Might be useful on the iPhone side
   store_id: {type: Schema.Types.ObjectId, ref: 'Store'},
-  product_skus: [{type: String}]
+  product_id: {type: Schema.Types.ObjectId, ref: 'Product'}
 });
 
 module.exports = mongoose.model('Coupon', CouponSchema);
