@@ -32,7 +32,7 @@ exports.getCouponForApp = function (req, res) {
       handleError(res, err);
     }
     if (!this_coupon) {
-      return res.status(404).send('no coupon found');
+      return res.status(404).json('no coupon found');
     }
     return res.status(200).json(this_coupon);
   });
@@ -82,5 +82,5 @@ exports.destroy = function(req, res) {
 };
 
 function handleError(res, err) {
-  return res.status(500).send(err);
+  return res.status(500).json(err);
 }

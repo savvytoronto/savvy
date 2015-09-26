@@ -1,22 +1,9 @@
 'use strict';
 
 angular.module('savvyAppApp')
-  .controller('MainCtrl', function ($scope, $http) {
-    $scope.awesomeThings = [];
-
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
+  .controller('MainCtrl', function ($scope, Auth, $http) {
+    Auth.getCurrentUserAsync(function (currentUser) {
+      $scope.currentUser = currentUser;
+      $scope.sid = currentUser.store_id;
     });
-
-    $scope.addThing = function() {
-      if($scope.newThing === '') {
-        return;
-      }
-      $http.post('/api/things', { name: $scope.newThing });
-      $scope.newThing = '';
-    };
-
-    $scope.deleteThing = function(thing) {
-      $http.delete('/api/things/' + thing._id);
-    };
   });

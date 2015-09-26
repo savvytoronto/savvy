@@ -14,7 +14,10 @@ var Product = require('./product.model');
 
 // Get list of products
 exports.index = function(req, res) {
-  Product.find(function (err, products) {
+  if (!req.user) {
+    return res.status(401).send('Not authenticated!');
+  }
+  Product.find({store_id: req.user.store_id}, function (err, products) {
     if(err) { return handleError(res, err); }
     return res.status(200).json(products);
   });

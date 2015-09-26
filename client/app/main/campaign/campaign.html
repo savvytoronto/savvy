@@ -1,0 +1,98 @@
+
+<div ng-show="currentStep === 'one'">
+	<div class="row">
+		<div class="col-sm-12 tab-header">
+			<h6>Create a new campaign - Pick your collection</h6>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-12">
+			<h1>CAMPAIGN #1</h1>
+		</div>
+		<div class="col-sm-12">
+			<h5>Step 1</h5>
+		</div>
+		<div class="col-sm-12">
+			<h6>Pick the collections that will be pushed to shoppers mobiles.These are the items you want to put up for dicounting in this campaign</h6>
+		</div>
+	</div>
+	<div class="row col-sm-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<div class="panel-title-box">
+	                <h3> Collection #1</h3> 
+	                <toggle-switch
+			            ng-model="htmlSwitchStatus1"
+			            html="true"
+			            id="collectionSwitch"
+			            class="switch-success switch-small"
+			            knob-label=""
+			            on-label='<i class="fa fa-thumbs-up" style="font-color:black"></i>'
+			            off-label='<i class="fa fa-thumbs-down" style="font-color:black"></i>'>
+			          </toggle-switch>
+	                <span> Collection #1 - 32 active coupons</span>
+	            </div>
+	            <ul class="panel-controls panel-controls-title">                                        
+		        </ul>
+		    </div>
+		    <div class="panel-body">
+	        	<div class="collection-border">
+	        		<div class="">
+	        		</div>
+	        	</div> 
+	        </div>
+		</div>
+	</div>
+	<hr>
+	<div class="row col-sm-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<div class="panel-title-box">
+	                <h3> Monthly Special Product</h3>
+	                <toggle-switch
+			            ng-model="htmlSwitchStatus2"
+			            id="mspSwitch"
+			            html="true"
+			            class="switch-success switch-small"
+			            knob-label=""
+			            on-label='<i class="fa fa-thumbs-up" style="font-color:black"></i>'
+			            off-label='<i class="fa fa-thumbs-down" style="font-color:black"></i>'>
+			          </toggle-switch>
+	                <span> Monthly Special - 2 Active coupons</span>
+	            </div>
+	            <ul class="panel-controls panel-controls-title">                                        
+		        </ul>
+		    </div>
+		    <div class="panel-body">
+	        	<div class="collection-border">
+	        		<div class="collection-area">
+	        		</div>
+	        	</div> 
+	        </div>
+		</div>
+	</div>
+	<div class="row col-sm-12">
+		<a class="btn btn-simple pull-right" style="font-size:30px" ng-click="goStep('two')"> NEXT <span class="glyphicon glyphicon-fast-forward" style="font-size:28px;padding-right: 20px"></span></a>
+	</div>
+</div>
+
+<div ng-if="currentStep==='two'">
+	<div class="row">
+		<div class="col-sm-12 tab-header">
+			<h6>Create a new campaign - Pick your collection</h6>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-12">
+			<h1>CAMPAIGN #1</h1>
+		</div>
+		<div class="col-sm-12">
+			<h5>Step 1</h5>
+		</div>
+		<div class="col-sm-12">
+			<h6>Pick the collections that will be pushed to shoppers mobiles.These are the items you want to put up for dicounting in this campaign</h6>
+		</div>
+	</div>
+</div>
