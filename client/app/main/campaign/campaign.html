@@ -106,7 +106,6 @@
 			<div class="col-sm-12" style="text-align:right; margin-top:80px;">
 				<button ng-click="goStep('three')" style="margin-right:30px;" class="btn btn-default btn-blue">Next</button>
 			</div>
-
 		</div>
 
 	</div>
@@ -185,7 +184,7 @@
 		</div>
 		<hr>
 		<div class="row">
-			<div class="col-sm-10 col-sm-offset-1 text-center" style="background: #f99157; border-radius:3%; padding:15px;">
+			<div class="col-sm-10 col-sm-offset-1 text-center" style="background: #f99157; border-radius:7px; padding:15px;">
 				<h4>If your campaign is either "Discrete" or "Staggered", pick a Campaign Budget. The Campaign Budget is a way for you to keep track of how many discounts have been redeemed. A Savvy shopper who redeems a coupon from the app will have dollar discounted value of the product subtracted from the campaign budget. For example, John wants to redeem a Savvy coupon worth 10% off a $100 Dress Shirt. The Savvy Campaign on Dress Shirts has a total budget for %500 for that week. When John redeems the coupon at the till, $10 (10% of $100) gets subtracted from the budget. The budget for the rest of the week is now $490.</h4>
 			</div>
 		</div>	
@@ -209,9 +208,14 @@
 		<div class="col-sm-4 col-sm-offset-4" style="margin-top:20%">
 			<i class="fa fa-cog fa-spin" style="font-size:45px"></i> <b style="font-size:45px">Deploying Campaign...</b>
 		</div>
-	</div>
-</div>
+		<div class="col-sm-12" style="text-align:right; margin-top:80px;">
+			<button ng-click="goStep(three)" style="margin-right:30px;" class="btn btn-default btn-blue">Next</button>
+		</div>
 
+	</div>
+
+</div>
+</div>
 <div ng-controller="SidebarRightCtrl" ng-include="'components/sidebar/sidebarRight.html'"></div>
 
 <style>

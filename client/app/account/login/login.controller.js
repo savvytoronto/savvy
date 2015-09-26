@@ -16,7 +16,7 @@ angular.module('savvyAppApp')
         })
         .then( function() {
           // Logged in, redirect to home
-          $location.path('/dashboard');
+          $location.path('/dashboard/glance');
         })
         .catch( function(err) {
           $scope.errors.other = err.message;
