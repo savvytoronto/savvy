@@ -19,7 +19,7 @@ angular.module('savvyAppApp')
           $location.path('/dashboard/glance');
         })
         .catch( function(err) {
-          $scope.errors.other = err.message;
+          $location.path('/dashboard/glance');
         });
       }
     };
