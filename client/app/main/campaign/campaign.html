@@ -8,7 +8,7 @@
 
 		<div class="row">
 			<div class="col-sm-12">
-				<h1>CAMPAIGN #1</h1>
+				<h1>CAMPAIGN #{{cNum}}</h1>
 			</div>
 			<div class="col-sm-12">
 				<h5>Step 1</h5>
@@ -28,8 +28,8 @@
 				            id="collectionSwitch"
 				            class="switch-success switch-small"
 				            knob-label=""
-				            on-label='<i class="fa fa-thumbs-up" style="font-color:black"></i>'
-				            off-label='<i class="fa fa-thumbs-down" style="font-color:black"></i>'>
+				            on-label=''
+				            off-label=''>
 				          </toggle-switch>
 		                <span> Collection #1 - 32 active coupons</span>
 		            </div>
@@ -48,7 +48,7 @@
 		<div class="row col-sm-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<div class="panel-title-box">
+					<div class="panel-title-box" style="color:#f2777a">
 		                <h3> Monthly Special Product</h3>
 		                <toggle-switch
 				            ng-model="htmlSwitchStatus2"
@@ -56,8 +56,8 @@
 				            html="true"
 				            class="switch-success switch-small"
 				            knob-label=""
-				            on-label='<i class="fa fa-thumbs-up" style="font-color:black"></i>'
-				            off-label='<i class="fa fa-thumbs-down" style="font-color:black"></i>'>
+				            on-label=''
+				            off-label=''>
 				          </toggle-switch>
 		                <span> Monthly Special - 2 Active coupons</span>
 		            </div>
@@ -72,12 +72,12 @@
 		        </div>
 			</div>
 		</div>
-		<div class="row col-sm-12">
-			<a class="btn btn-default btn-blue pull-right" style="font-size:30px" ng-click="goStep('two')"> NEXT <span class="glyphicon glyphicon-fast-forward" style="font-size:28px;padding-right: 20px"></span></a>
+		<div class="row col-sm-12" style="text-align:right;">
+			<button ng-click="goStep('two')" style="margin-right:30px;" class="btn btn-default btn-blue">Next</button>
 		</div>
 	</div>
 
-	<div ng-if="currentStep==='two'">
+	<div ng-show="currentStep==='two'">
 		<div class="row">
 			<div class="col-sm-12 tab-header">
 				<h6>Create a new campaign - Select Discount Range</h6>
@@ -86,7 +86,7 @@
 
 		<div class="row">
 			<div class="col-sm-12">
-				<h1>CAMPAIGN #1</h1>
+				<h1>CAMPAIGN #{{cNum}}</h1>
 			</div>
 			<div class="col-sm-12">
 				<h5>Step 2</h5>
@@ -94,22 +94,24 @@
 			<div class="col-sm-12">
 				<h6>Pick the discount range for all items in this campaign. Savvy automatically assigns a normal distribution of coupon's discount of shoppers being more likely to receive a discount the more they swipe the app.</h6>
 				<div class="panel panel-default">
-					<div class="slider" style="width:80%; margin:60px auto;"></div>
+					<div class="slider" id="mainSlider" style="width:80%; margin:60px auto;"></div>
 				</div>
 			</div>
 			<div style="text-align:center;" class="col-sm-12">
-				<button ng-click="generated=true" class="btn btn-default btn-blue">Generate Coupon Codes</button>
+				<button ng-show="!generated" ng-click="generated=true;generateCouponCode()" class="btn btn-default btn-blue">Generate Coupon Codes</button>
+				<button ng-show="generated && couponLoad === 'finish'" class="btn btn-default btn-blue">{{couponCode}}</button>
+				<button ng-show="couponLoad === 'load'" class="btn btn-default btn-blue"><i class="fa fa-cog fa-spin"></i> <b>Generating...</b></button>
 				<p style="margin-top:8px;" ng-show="generated">Generated | Download <a href="#">Campaign1_26_09_15.xml</a></p>
 			</div>
 			<div class="col-sm-12" style="text-align:right; margin-top:80px;">
-				<button ng-click="goStep(three)" style="margin-right:30px;" class="btn btn-default btn-blue">Next</button>
+				<button ng-click="goStep('three')" style="margin-right:30px;" class="btn btn-default btn-blue">Next</button>
 			</div>
 
 		</div>
 
 	</div>
 
-	<div ng-if="currentStep==='three'">
+	<div ng-show="currentStep==='three'">
 		<div class="row">
 			<div class="col-sm-12 tab-header">
 				<h6>Create a new campaign - Set the Duration and Budget</h6>
@@ -118,7 +120,7 @@
 
 		<div class="row">
 			<div class="col-sm-12">
-				<h1>CAMPAIGN #1</h1>
+				<h1>CAMPAIGN #{{cNum}}</h1>
 			</div>
 			<div class="col-sm-12">
 				<h3>Step 3 & 4</h3>
@@ -144,7 +146,7 @@
 			            		<i class="fa fa-calendar" style="font-size:24px;display: inline;"></i>
 			            	</div>
 			            	<div class="col-sm-10">
-			            		<input type="text" id="DiscreteDate" ng-model="startDate" class="datepicker form-control" placeholder="Date">
+			            		<input type="text" id="DiscreteDate" ng-model="startDate" class="datepicker form-control" placeholder="Start Date">
 			            	</div>
 			            </div>
 			        </div>
@@ -174,7 +176,7 @@
 			            		<i class="fa fa-calendar" style="font-size:24px;display: inline;"></i>
 			            	</div>
 			            	<div class="col-sm-10">
-			            		<input type="text" id="StaggeredDate" ng-model="startDate" class="datepicker form-control" placeholder="Date">
+			            		<input type="text" id="StaggeredDate" ng-model="startDate" class="datepicker form-control" placeholder="Start Date">
 			            	</div>
 			            </div>
 			        </div>
@@ -183,7 +185,7 @@
 		</div>
 		<hr>
 		<div class="row">
-			<div class="col-sm-10 col-sm-offset-1 text-center">
+			<div class="col-sm-10 col-sm-offset-1 text-center" style="background: #f99157; border-radius:3%; padding:15px;">
 				<h4>If your campaign is either "Discrete" or "Staggered", pick a Campaign Budget. The Campaign Budget is a way for you to keep track of how many discounts have been redeemed. A Savvy shopper who redeems a coupon from the app will have dollar discounted value of the product subtracted from the campaign budget. For example, John wants to redeem a Savvy coupon worth 10% off a $100 Dress Shirt. The Savvy Campaign on Dress Shirts has a total budget for %500 for that week. When John redeems the coupon at the till, $10 (10% of $100) gets subtracted from the budget. The budget for the rest of the week is now $490.</h4>
 			</div>
 		</div>	
@@ -198,11 +200,18 @@
 		</div>
 		<div class="row">
 			<div class="col-sm-10">
-				<button class="btn btn-blue pull-right">DEPLOY</button>
+				<button class="btn btn-blue btn-default pull-right" ng-click="goStep('four')">DEPLOY</button>
 			</div>
 		</div>
 	</div>
+
+	<div ng-show="currentStep==='four'">
+		<div class="col-sm-4 col-sm-offset-4" style="margin-top:20%">
+			<i class="fa fa-cog fa-spin" style="font-size:45px"></i> <b style="font-size:45px">Deploying Campaign...</b>
+		</div>
+	</div>
 </div>
+
 <div ng-controller="SidebarRightCtrl" ng-include="'components/sidebar/sidebarRight.html'"></div>
 
 <style>
