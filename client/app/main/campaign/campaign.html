@@ -106,7 +106,6 @@
 			<div class="col-sm-12" style="text-align:right; margin-top:80px;">
 				<button ng-click="goStep('three')" style="margin-right:30px;" class="btn btn-default btn-blue">Next</button>
 			</div>
-
 		</div>
 
 	</div>
@@ -209,9 +208,14 @@
 		<div class="col-sm-4 col-sm-offset-4" style="margin-top:20%">
 			<i class="fa fa-cog fa-spin" style="font-size:45px"></i> <b style="font-size:45px">Deploying Campaign...</b>
 		</div>
-	</div>
-</div>
+		<div class="col-sm-12" style="text-align:right; margin-top:80px;">
+			<button ng-click="goStep(three)" style="margin-right:30px;" class="btn btn-default btn-blue">Next</button>
+		</div>
 
+	</div>
+
+</div>
+</div>
 <div ng-controller="SidebarRightCtrl" ng-include="'components/sidebar/sidebarRight.html'"></div>
 
 <style>
