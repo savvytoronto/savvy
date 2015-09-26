@@ -7,6 +7,9 @@ angular.module('savvyAppApp')
       'link': '/'
     }];
 
+    $scope.compaignName = "Banana Republic";
+    $scope.compaignBudget ="100";
+      
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
     $scope.isAdmin = Auth.isAdmin;
