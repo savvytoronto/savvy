@@ -14,10 +14,22 @@ var Coupon = require('./coupon.model');
 
 // Get list of coupons
 exports.index = function(req, res) {
-  Coupon.find(function (err, coupon) {
-    if(err) { return handleError(res, err); }
-    return res.status(200).json(coupon);
-  });
+  // Coupon.find(function (err, coupon) {
+  //   if(err) { return handleError(res, err); }
+  //   return res.status(200).json(coupon);
+  // });
+  var coupon = [{ "_id" : "56067bc5d10c09f11de4c302",
+  "code" : "yhd7iw",
+  "is_active" : false,
+  "discount_percent" : 23,
+  "title_primary" : "Zara Long Sleeve",
+  "title_secondary" : "Red",
+  "campaign_id" : "56067bc5d10c09f11de4c301",
+  "campaign_budget" : 300,
+  "store_id" : "56067bc5d10c09f11de4c2fe",
+  "__v" : 0 }];
+
+  return res.status(200).json(coupon);
 };
 
 exports.getCouponForApp = function (req, res) {
