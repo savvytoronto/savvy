@@ -18,7 +18,7 @@
     vertical-align: text-bottom;
 }
 
-#MainMenu > div.list-group > a:hover {
+#MainMenu > div.list-group > a:hover, #MainMenu > div.list-group > a:focus, #MainMenu > div.list-group > a:active {
 	background: #3d4e5d;
     -webkit-transition: all 200ms ease;
     -moz-transition: all 200ms ease;
@@ -59,7 +59,7 @@
     border-bottom-color: #23303b;
 	padding-left: 25px;
 }
-.submenu > a:hover {
+.submenu > a:hover, .submenu > a:focus, .submenu > a:active {
     background: #23303b;
     color: #ffffff;
 	
@@ -78,10 +78,23 @@
 	width: 80px;
 }
 
-#steps-fivepercent-slider .ui-slider-tip {
+.ui-slider-float .ui-slider-tip {
     visibility: visible;
     opacity: 1;
     top: -30px;
+    background: #33414e;
+    color:#fff;
+}
+
+.ui-widget-header {
+    background: #33414e;
+}
+
+.btn-blue, .btn-blue:focus, .btn-blue:active {
+        background: #33414e;
+    color: #fff;
+    font-size: 17px;
+    padding: 10px 23px;
 }
 
 .page-sidebar-right .x-navigation li .fa {
