@@ -18,14 +18,19 @@ angular.module('savvyAppApp')
 		    templateUrl: 'app/main/campaign/campaign.html',
 	  	  	controller: 'CampaignCtrl'
 	  	})
-	  	.state('main.collection', {
-		    url: '/collection',
-		    templateUrl: 'app/main/collection/collection.html',
-	  	  	controller: 'CollectionCtrl'
+	  	.state('main.newcollection', {
+		    url: '/collection/new',
+		    templateUrl: 'app/main/collection/new/newcollection.html',
+	  	  	controller: 'NewCollectionCtrl'
 	  	})
-	  	.state('main.inventory', {
-		    url: '/inventory',
-		    templateUrl: 'app/main/inventory/inventory.html',
-	  	  	controller: 'InventoryCtrl'
-	  	})
+		  .state('main.managecollection', {
+		    url: '/collection/manage',
+		    templateUrl: 'app/main/collection/manage/managecollection.html',
+	  	  	controller: 'ManageCollectionCtrl'
+	  	});
+	  	// .state('main.inventory', {
+		  //   url: '/inventory',
+		  //   templateUrl: 'app/main/inventory/inventory.html',
+	  	//   	controller: 'InventoryCtrl'
+	  	// })
 });	
