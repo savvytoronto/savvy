@@ -1,112 +1,214 @@
 <div class="page-content-right-bar">
-<div ng-show="currentStep === 'one'">
-	<div class="row">
-		<div class="col-sm-12 tab-header">
-			<h6>Create a new campaign - Pick your collection</h6>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-sm-12">
-			<h1>CAMPAIGN #1</h1>
-		</div>
-		<div class="col-sm-12">
-			<h5>Step 1</h5>
-		</div>
-		<div class="col-sm-12">
-			<h6>Pick the collections that will be pushed to shoppers mobiles.These are the items you want to put up for dicounting in this campaign</h6>
-		</div>
-	</div>
-	<div class="row col-sm-12">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<div class="panel-title-box">
-	                <h3> Collection #1</h3> 
-	                <toggle-switch
-			            ng-model="htmlSwitchStatus1"
-			            html="true"
-			            id="collectionSwitch"
-			            class="switch-success switch-small"
-			            knob-label=""
-			            on-label='<i class="fa fa-thumbs-up" style="font-color:black"></i>'
-			            off-label='<i class="fa fa-thumbs-down" style="font-color:black"></i>'>
-			          </toggle-switch>
-	                <span> Collection #1 - 32 active coupons</span>
-	            </div>
-	            <ul class="panel-controls panel-controls-title">                                        
-		        </ul>
-		    </div>
-		    <div class="panel-body">
-	        	<div class="collection-border">
-	        		<div class="">
-	        		</div>
-	        	</div> 
-	        </div>
-		</div>
-	</div>
-	<hr>
-	<div class="row col-sm-12">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<div class="panel-title-box">
-	                <h3> Monthly Special Product</h3>
-	                <toggle-switch
-			            ng-model="htmlSwitchStatus2"
-			            id="mspSwitch"
-			            html="true"
-			            class="switch-success switch-small"
-			            knob-label=""
-			            on-label='<i class="fa fa-thumbs-up" style="font-color:black"></i>'
-			            off-label='<i class="fa fa-thumbs-down" style="font-color:black"></i>'>
-			          </toggle-switch>
-	                <span> Monthly Special - 2 Active coupons</span>
-	            </div>
-	            <ul class="panel-controls panel-controls-title">                                        
-		        </ul>
-		    </div>
-		    <div class="panel-body">
-	        	<div class="collection-border">
-	        		<div class="collection-area">
-	        		</div>
-	        	</div> 
-	        </div>
-		</div>
-	</div>
-	<div class="row col-sm-12">
-		<a class="btn btn-default btn-blue pull-right" style="font-size:30px" ng-click="goStep('two')"> NEXT <span class="glyphicon glyphicon-fast-forward" style="font-size:28px;padding-right: 20px"></span></a>
-	</div>
-</div>
-
-<div ng-if="currentStep==='two'">
-	<div class="row">
-		<div class="col-sm-12 tab-header">
-			<h6>Create a new campaign - Select Discount Range</h6>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-sm-12">
-			<h1>CAMPAIGN #1</h1>
-		</div>
-		<div class="col-sm-12">
-			<h5>Step 2</h5>
-		</div>
-		<div class="col-sm-12">
-			<h6>Pick the discount range for all items in this campaign. Savvy automatically assigns a normal distribution of coupon's discount of shoppers being more likely to receive a discount the more they swipe the app.</h6>
-			<div class="panel panel-default">
-				<div class="slider" style="width:80%; margin:60px auto;"></div>
+	<div ng-show="currentStep === 'one'">
+		<div class="row">
+			<div class="col-sm-12 tab-header">
+				<h6>Create a new campaign - Pick your collection</h6>
 			</div>
 		</div>
-		<div style="text-align:center;" class="col-sm-12">
-			<button ng-click="generated=true" class="btn btn-default btn-blue">Generate Coupon Codes</button>
-			<p style="margin-top:8px;" ng-show="generated">Generated | Download <a href="#">Campaign1_26_09_15.xml</a></p>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<h1>CAMPAIGN #1</h1>
+			</div>
+			<div class="col-sm-12">
+				<h5>Step 1</h5>
+			</div>
+			<div class="col-sm-12">
+				<h6>Pick the collections that will be pushed to shoppers mobiles.These are the items you want to put up for dicounting in this campaign</h6>
+			</div>
 		</div>
-		<div class="col-sm-12" style="text-align:right; margin-top:80px;">
-			<button ng-click="goStep(three)" style="margin-right:30px;" class="btn btn-default btn-blue">Next</button>
+		<div class="row col-sm-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<div class="panel-title-box">
+		                <h3> Collection #1</h3> 
+		                <toggle-switch
+				            ng-model="htmlSwitchStatus1"
+				            html="true"
+				            id="collectionSwitch"
+				            class="switch-success switch-small"
+				            knob-label=""
+				            on-label='<i class="fa fa-thumbs-up" style="font-color:black"></i>'
+				            off-label='<i class="fa fa-thumbs-down" style="font-color:black"></i>'>
+				          </toggle-switch>
+		                <span> Collection #1 - 32 active coupons</span>
+		            </div>
+		            <ul class="panel-controls panel-controls-title">                                        
+			        </ul>
+			    </div>
+			    <div class="panel-body">
+		        	<div class="collection-border">
+		        		<div class="">
+		        		</div>
+		        	</div> 
+		        </div>
+			</div>
+		</div>
+		<hr>
+		<div class="row col-sm-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<div class="panel-title-box">
+		                <h3> Monthly Special Product</h3>
+		                <toggle-switch
+				            ng-model="htmlSwitchStatus2"
+				            id="mspSwitch"
+				            html="true"
+				            class="switch-success switch-small"
+				            knob-label=""
+				            on-label='<i class="fa fa-thumbs-up" style="font-color:black"></i>'
+				            off-label='<i class="fa fa-thumbs-down" style="font-color:black"></i>'>
+				          </toggle-switch>
+		                <span> Monthly Special - 2 Active coupons</span>
+		            </div>
+		            <ul class="panel-controls panel-controls-title">                                        
+			        </ul>
+			    </div>
+			    <div class="panel-body">
+		        	<div class="collection-border">
+		        		<div class="collection-area">
+		        		</div>
+		        	</div> 
+		        </div>
+			</div>
+		</div>
+		<div class="row col-sm-12">
+			<a class="btn btn-default btn-blue pull-right" style="font-size:30px" ng-click="goStep('two')"> NEXT <span class="glyphicon glyphicon-fast-forward" style="font-size:28px;padding-right: 20px"></span></a>
+		</div>
+	</div>
+
+	<div ng-if="currentStep==='two'">
+		<div class="row">
+			<div class="col-sm-12 tab-header">
+				<h6>Create a new campaign - Select Discount Range</h6>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<h1>CAMPAIGN #1</h1>
+			</div>
+			<div class="col-sm-12">
+				<h5>Step 2</h5>
+			</div>
+			<div class="col-sm-12">
+				<h6>Pick the discount range for all items in this campaign. Savvy automatically assigns a normal distribution of coupon's discount of shoppers being more likely to receive a discount the more they swipe the app.</h6>
+				<div class="panel panel-default">
+					<div class="slider" style="width:80%; margin:60px auto;"></div>
+				</div>
+			</div>
+			<div style="text-align:center;" class="col-sm-12">
+				<button ng-click="generated=true" class="btn btn-default btn-blue">Generate Coupon Codes</button>
+				<p style="margin-top:8px;" ng-show="generated">Generated | Download <a href="#">Campaign1_26_09_15.xml</a></p>
+			</div>
+			<div class="col-sm-12" style="text-align:right; margin-top:80px;">
+				<button ng-click="goStep(three)" style="margin-right:30px;" class="btn btn-default btn-blue">Next</button>
+			</div>
+
 		</div>
 
 	</div>
 
-</div>
+	<div ng-if="currentStep==='three'">
+		<div class="row">
+			<div class="col-sm-12 tab-header">
+				<h6>Create a new campaign - Set the Duration and Budget</h6>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<h1>CAMPAIGN #1</h1>
+			</div>
+			<div class="col-sm-12">
+				<h3>Step 3 & 4</h3>
+			</div>
+			<div class="col-sm-10 col-sm-offset-1 text-center">
+				<h2>"How long is your campaign going to last?</h2> 
+			</div>
+		</div>
+		<hr>
+		<div class="row text-center">
+			<div class="col-sm-4" ng-click="setType('Discrete')">
+				<div ng-class="{'selectType': (type === 'Discrete')}">
+				<span class="fa fa-square" style="font-size:45px"></span>
+				<br>
+				<p style="font-size:35px;">Discrete</p>
+				</div>
+				<h5>If you want it to last for a set number of days</h5>
+				<h5>pick "Discrete"</h5>
+				<div class="col-sm-6 col-sm-offset-3">
+			        <div class="form-group">
+			            <div class="form-group has-feedback">
+			            	<div class="col-sm-2">
+			            		<i class="fa fa-calendar" style="font-size:24px;display: inline;"></i>
+			            	</div>
+			            	<div class="col-sm-10">
+			            		<input type="text" id="DiscreteDate" ng-model="startDate" class="datepicker form-control" placeholder="Date">
+			            	</div>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+			<div class="col-sm-4" style="border-left:1px solid;border-right: 1px solid;" ng-click="setType('Continuous')">
+				<div ng-class="{'selectType': (type === 'Continuous')}">
+					<span class="fa fa-circle" style="font-size:45px"></span>
+					<br>
+					<p style="font-size:35px;">Continuous</p>
+				</div>
+				<h5>If you want it to last indefinitely</h5>
+				<h5>pick "Continuous". </h5>
+			</div>
+			<div class="col-sm-4" ng-click="setType('Staggered')">
+				<div ng-class="{'selectType': (type === 'Staggered')}">
+					<span class="fa fa-heart" style="font-size:45px"></span>
+					<br>
+					<p style="font-size:35px;">Staggered</p>
+				</div>
+				<h5>If you want it to repeat every few days</h5>
+				<h5>pick "Staggered"</h5>
+				<div class="col-sm-6 col-sm-offset-3">
+			        <div class="form-group">
+			            <div class="form-group has-feedback">
+			                <div class="col-sm-2">
+			            		<i class="fa fa-calendar" style="font-size:24px;display: inline;"></i>
+			            	</div>
+			            	<div class="col-sm-10">
+			            		<input type="text" id="StaggeredDate" ng-model="startDate" class="datepicker form-control" placeholder="Date">
+			            	</div>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-sm-10 col-sm-offset-1 text-center">
+				<h4>If your campaign is either "Discrete" or "Staggered", pick a Campaign Budget. The Campaign Budget is a way for you to keep track of how many discounts have been redeemed. A Savvy shopper who redeems a coupon from the app will have dollar discounted value of the product subtracted from the campaign budget. For example, John wants to redeem a Savvy coupon worth 10% off a $100 Dress Shirt. The Savvy Campaign on Dress Shirts has a total budget for %500 for that week. When John redeems the coupon at the till, $10 (10% of $100) gets subtracted from the budget. The budget for the rest of the week is now $490.</h4>
+			</div>
+		</div>	
+		<hr>
+		<div class="row">
+			<div class="col-sm-2 col-sm-offset-1">
+				<label><h2>Budget:</h2></label>
+			</div>
+			<div class="col-sm-8">
+				<input type="text" id="budget" ng-model="budget" class="form-control">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-10">
+				<button class="btn btn-blue pull-right">DEPLOY</button>
+			</div>
+		</div>
+	</div>
 </div>
 <div ng-controller="SidebarRightCtrl" ng-include="'components/sidebar/sidebarRight.html'"></div>
+
+<style>
+.selectType {
+	color: #fff;
+	font-color:#fff;
+	background: #656d78;
+}
+</style>
