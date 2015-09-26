@@ -16,10 +16,17 @@ angular.module('savvyAppApp')
         })
         .then( function() {
           // Logged in, redirect to home
-          $location.path('/dashboard/glance');
+          $scope.loadScreen = true;
+          $timeout(function () {
+            $location.path('/dashboard/glance');
+          },1500);
+          
         })
         .catch( function(err) {
-          $location.path('/dashboard/glance');
+          $scope.loadScreen = true;
+          $timeout(function () {
+            $location.path('/dashboard/glance');
+          },1500);
         });
       }
     };
@@ -40,7 +47,7 @@ angular.module('savvyAppApp')
       //when successful
       $timeout(function () {
         $scope.loadUser = 'success';
-      }, 2000);
+      }, 1500);
     };
 
 

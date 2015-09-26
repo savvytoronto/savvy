@@ -22,7 +22,7 @@
 			</div>
 		</div>
 
-		<div class="col-sm-12" ng-show="loadUser === 'load'">
+		<div class="col-sm-12" ng-show="loadUser === 'load' && !loadScreen">
 			<div class="loginmodal-container" style="border:0">
 			  	<div class="row text-center">                            
 					<i style="font-size:40px" class="fa fa-cog fa-spin"></i><span style="font-size:25px"> Getting User.....</span>
@@ -30,7 +30,15 @@
 			</div>
 		</div>
 
-		<div class="col-sm-12" ng-show="loadUser === 'success'">
+		<div class="col-sm-12" ng-show="loadScreen">
+			<div class="loginmodal-container" style="border:0">
+			  	<div class="row text-center">                            
+					<i style="font-size:40px" class="fa fa-cog fa-spin"></i><span style="font-size:25px"> Reading Profile.....</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-12" ng-show="loadUser === 'success' && !loadScreen">
 			<div class="loginmodal-container">
 			  	<div class="row text-center" style="margin-bottom:20px;">                            
 					<a><img style="margin:0 auto;border-radius:50%;width:200px;height:200px" class="img-responsive" src="http://i.imgur.com/vFw5W1k.jpg"></a>
