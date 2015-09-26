@@ -28,8 +28,8 @@
 				            id="collectionSwitch"
 				            class="switch-success switch-small"
 				            knob-label=""
-				            on-label='<i class="fa fa-thumbs-up" style="font-color:black"></i>'
-				            off-label='<i class="fa fa-thumbs-down" style="font-color:black"></i>'>
+				            on-label=''
+				            off-label=''>
 				          </toggle-switch>
 		                <span> Collection #1 - 32 active coupons</span>
 		            </div>
@@ -67,8 +67,8 @@
 				            html="true"
 				            class="switch-success switch-small"
 				            knob-label=""
-				            on-label='<i class="fa fa-thumbs-up" style="font-color:black"></i>'
-				            off-label='<i class="fa fa-thumbs-down" style="font-color:black"></i>'>
+				            on-label=''
+				            off-label=''>
 				          </toggle-switch>
 		                <span> Monthly Special - 2 Active coupons</span>
 		            </div>
@@ -159,15 +159,15 @@
 				<p style="font-size:35px;">Discrete</p>
 				</div>
 				<h5>If you want it to last for a set number of days</h5>
-				<h5>pick "Discrete"</h5>
+				<h5>Pick "Discrete"</h5>
 				<div class="col-sm-6 col-sm-offset-3">
 			        <div class="form-group">
 			            <div class="form-group has-feedback">
 			            	<div class="col-sm-2">
-			            		<i class="fa fa-calendar" style="font-size:24px;display: inline;"></i>
+			            		<i class="fa fa-calendar" style="font-size:23px;display: inline;"></i>
 			            	</div>
 			            	<div class="col-sm-10">
-			            		<input type="text" id="DiscreteDate" ng-model="startDate" class="datepicker form-control" placeholder="Start Date">
+			            		<input type="text" id="DiscreteDate" ng-model="startDate" class="datepicker form-control" placeholder="Start">
 			            	</div>
 			            </div>
 			        </div>
@@ -180,7 +180,7 @@
 					<p style="font-size:35px;">Continuous</p>
 				</div>
 				<h5>If you want it to last indefinitely</h5>
-				<h5>pick "Continuous". </h5>
+				<h5>Pick "Continuous". </h5>
 			</div>
 			<div class="col-sm-4" ng-click="setType('Staggered')">
 				<div ng-class="{'selectType': (type === 'Staggered')}">
@@ -189,15 +189,15 @@
 					<p style="font-size:35px;">Staggered</p>
 				</div>
 				<h5>If you want it to repeat every few days</h5>
-				<h5>pick "Staggered"</h5>
+				<h5>Pick "Staggered"</h5>
 				<div class="col-sm-6 col-sm-offset-3">
 			        <div class="form-group">
 			            <div class="form-group has-feedback">
 			                <div class="col-sm-2">
-			            		<i class="fa fa-calendar" style="font-size:24px;display: inline;"></i>
+			            		<i class="fa fa-calendar" style="font-size:23px;display: inline;"></i>
 			            	</div>
 			            	<div class="col-sm-10">
-			            		<input type="text" id="StaggeredDate" ng-model="startDate" class="datepicker form-control" placeholder="Start Date">
+			            		<input type="text" id="StaggeredDate" ng-model="startDate" class="datepicker form-control" placeholder="Start">
 			            	</div>
 			            </div>
 			        </div>
