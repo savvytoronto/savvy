@@ -22,7 +22,7 @@
 					<li ng-repeat="item in products">
 						<div class="card-small">
 							<div class="card-img">
-								<img ng-src="assets/images/{{item.src}}" ng-click="setItem(item)">
+								<img ng-src="{{item.src}}" ng-click="setItem(item)">
 							</div>
 							<div class="card-block">
 								<p class="card-text">{{item.name}}</p>
@@ -86,7 +86,7 @@
 	<div class="col-sm-4" ng-show="selectedItem">
 		<div class="card">
 			<div class="card-img">
-				<img src="assets/images/{{selectedItem.src}}">
+				<img src="{{selectedItem.src}}">
 			</div>
 			<div class="card-block">
 				<h4 class="card-title">Collection #1</h4>
