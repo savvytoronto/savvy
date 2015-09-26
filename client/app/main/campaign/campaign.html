@@ -1,3 +1,4 @@
+<div class="page-content-right-bar">
 <div ng-show="currentStep === 'one'">
 	<div class="row">
 		<div class="col-sm-12 tab-header">
@@ -72,14 +73,14 @@
 		</div>
 	</div>
 	<div class="row col-sm-12">
-		<a class="btn btn-simple pull-right" style="font-size:30px" ng-click="goStep('two')"> NEXT <span class="glyphicon glyphicon-fast-forward" style="font-size:28px;padding-right: 20px"></span></a>
+		<a class="btn btn-default btn-blue pull-right" style="font-size:30px" ng-click="goStep('two')"> NEXT <span class="glyphicon glyphicon-fast-forward" style="font-size:28px;padding-right: 20px"></span></a>
 	</div>
 </div>
 
 <div ng-if="currentStep==='two'">
 	<div class="row">
 		<div class="col-sm-12 tab-header">
-			<h6>Create a new campaign - Pick your collection</h6>
+			<h6>Create a new campaign - Select Discount Range</h6>
 		</div>
 	</div>
 
@@ -88,10 +89,24 @@
 			<h1>CAMPAIGN #1</h1>
 		</div>
 		<div class="col-sm-12">
-			<h5>Step 1</h5>
+			<h5>Step 2</h5>
 		</div>
 		<div class="col-sm-12">
-			<h6>Pick the collections that will be pushed to shoppers mobiles.These are the items you want to put up for dicounting in this campaign</h6>
+			<h6>Pick the discount range for all items in this campaign. Savvy automatically assigns a normal distribution of coupon's discount of shoppers being more likely to receive a discount the more they swipe the app.</h6>
+			<div class="panel panel-default">
+				<div class="slider" style="width:80%; margin:60px auto;"></div>
+			</div>
 		</div>
+		<div style="text-align:center;" class="col-sm-12">
+			<button ng-click="generated=true" class="btn btn-default btn-blue">Generate Coupon Codes</button>
+			<p style="margin-top:8px;" ng-show="generated">Generated | Download <a href="#">Campaign1_26_09_15.xml</a></p>
+		</div>
+		<div class="col-sm-12" style="text-align:right; margin-top:80px;">
+			<button ng-click="goStep(three)" style="margin-right:30px;" class="btn btn-default btn-blue">Next</button>
+		</div>
+
 	</div>
+
 </div>
+</div>
+<div ng-controller="SidebarRightCtrl" ng-include="'components/sidebar/sidebarRight.html'"></div>

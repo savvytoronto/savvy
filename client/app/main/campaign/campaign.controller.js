@@ -2,7 +2,7 @@
 
 angular.module('savvyAppApp')
   .controller('CampaignCtrl', function ($scope, $http) {
-    $scope.currentStep = 'one';
+    $scope.currentStep = 'two';
 
     $scope.$watch('$parent.sid', function () {
     	$scope.sid = $scope.$parent.sid;
