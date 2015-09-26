@@ -1,0 +1,98 @@
+<div class="row">
+	<div class="col-sm-12 tab-header">
+		<h6>Create a new collection</h6>
+	</div>
+</div>
+<div class="row ">
+	<div class="col-sm-6">
+		<h1>COLLECTION #1 <i class="fa fa-question-circle"></i></h1>
+	</div>
+	<div class="col-sm-3 col-sm-offset-2">
+		<p style="margin-top: 15px; font-size: 14px;">32 Products Currently in Collection<br>32 SXUs Currently in Collection</p>
+	</div>
+	<div style="padding-top: 13px;">
+		<a href="#" type="button" class="btn btn-round" style="font-size: 14px; padding: 12px 10px;">CREATE</a>
+	</div>
+</div>
+<div class="row col-sm-12">
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="collection-border">
+				<ul class="collection-area">
+					<li ng-repeat="item in products">
+						<div class="card-small">
+							<div class="card-img">
+								<img ng-src="assets/images/{{item.src}}" ng-click="setItem(item)">
+							</div>
+							<div class="card-block">
+								<p class="card-text">{{item.name}}</p>
+								<a href="#">Discount</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div> 
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-8">
+		<h3>Story Inventory <i class="fa fa-question-circle"></i></h3>
+		<div class="table-responsive">
+			<table class="table" border="2">
+				<thead>
+					<tr>
+						<th class="text-left verticle-middle">Product Name<br>Cost</th>
+						<th class="text-left verticle-middle">SKU CODE</th>
+						<th class="text-left verticle-middle">QTY</th>
+						<th class="text-center verticle-middle">Add to COLLECTION</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="text-left verticle-middle">Slim-Fit Dark Shirt<br>$74.97</td>
+						<td class="text-left verticle-middle">907432</td>
+						<td class="text-left verticle-middle">10</td>
+						<td class="text-center verticle-middle"><i class="fa fa-2x fa-check-square-o"></i></td>
+					</tr>
+					<tr>
+						<td class="text-left verticle-middle">Wash Dot Shirt<br>$61.99</td>
+						<td class="text-left verticle-middle">987412</td>
+						<td class="text-left verticle-middle">30</td>
+						<td class="text-center verticle-middle"><i class="fa fa-2x fa-square-o"></i></td>
+					</tr>
+					<tr>
+						<td class="text-left verticle-middle">Micro-Check Shirt<br>$87.99</td>
+						<td class="text-left verticle-middle">273892</td>
+						<td class="text-left verticle-middle">23</td>
+						<td class="text-center verticle-middle"><i class="fa fa-2x fa-circle-o"></i></td>
+					</tr>
+					<tr>
+						<td class="text-left verticle-middle">Wash Heathered Shirt<br>$61.99</td>
+						<td class="text-left verticle-middle">489078</td>
+						<td class="text-left verticle-middle">42</td>
+						<td class="text-center verticle-middle"><i class="fa fa-2x fa-minus-circle"></i></td>
+					</tr>
+					<tr>
+						<td class="text-left verticle-middle">Indigo Jean<br>$93.99</td>
+						<td class="text-left verticle-middle">472987</td>
+						<td class="text-left verticle-middle">78</td>
+						<td class="text-center verticle-middle"><i class="fa fa-2x fa-share-square-o"></i></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="col-sm-4" ng-show="selectedItem">
+		<div class="card">
+			<div class="card-img">
+				<img src="assets/images/{{selectedItem.src}}">
+			</div>
+			<div class="card-block">
+				<h4 class="card-title">Collection #1</h4>
+				<p class="card-text">{{selectedItem.name}}</p>
+				<a href="#" class="btn btn-primary">Discount</a>
+			</div>
+		</div>
+	</div>
+</div>

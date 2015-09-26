@@ -1,0 +1,83 @@
+<div class="row">
+	<div class="col-sm-12 tab-header">
+		<h6>Manage collections</h6>
+	</div>
+</div>
+<div class="row ">
+	<div class="col-sm-6">
+		<h1>COLLECTION #1</h1>
+	</div>
+</div>
+<div class="row col-sm-12">
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="collection-border" style="height:142px;">
+				<ul class="collection-area">
+					<li ng-repeat="item in products1">
+						<div class="card-small">
+							<div class="card-img">
+								<img ng-src="assets/images/{{item.src}}" ng-click="setItem(item)">
+							</div>
+							<div class="card-block">
+								<p class="card-text">{{item.name}}</p>
+								<a href="#">Discount</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div> 
+		</div>
+	</div>
+</div>
+<div class="row ">
+	<div class="col-sm-6">
+		<h1>Special Weekend Sale</h1>
+	</div>
+</div>
+<div class="row col-sm-12">
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="collection-border" style="height:142px;">
+				<ul class="collection-area">
+					<li ng-repeat="item in products2">
+						<div class="card-small">
+							<div class="card-img">
+								<img ng-src="assets/images/{{item.src}}" ng-click="setItem(item)">
+							</div>
+							<div class="card-block">
+								<p class="card-text">{{item.name}}</p>
+								<a href="#">Discount</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div> 
+		</div>
+	</div>
+</div>
+<div class="row ">
+	<div class="col-sm-6">
+		<h1>Monthly Sale</h1>
+	</div>
+</div>
+<div class="row col-sm-12">
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="collection-border" style="height:142px;">
+				<ul class="collection-area">
+					<li ng-repeat="item in products3">
+						<div class="card-small">
+							<div class="card-img">
+								<img ng-src="assets/images/{{item.src}}" ng-click="setItem(item)">
+							</div>
+							<div class="card-block">
+								<p class="card-text">{{item.name}}</p>
+								<a href="#">Discount</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div> 
+		</div>
+	</div>
+</div>

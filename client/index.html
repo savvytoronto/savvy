@@ -13,7 +13,10 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(client) app/vendor.css -->
       <!-- bower:css -->
+      <link rel="stylesheet" href="bower_components/angular-toggle-switch/style/bootstrap3/angular-toggle-switch-bootstrap-3.css" />
       <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+      <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css" />
+      <link rel="stylesheet" href="bower_components/jQuery-ui-Slider-Pips/dist/jquery-ui-slider-pips.css" />
       <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,client}) app/app.css -->
@@ -23,7 +26,13 @@
       <link rel="stylesheet" href="app/admin/admin.css">
       <link rel="stylesheet" href="app/app.css">
       <link rel="stylesheet" href="app/main/main.css">
+      <link rel="stylesheet" href="components/datepicker/bootstrap-datepicker.min.css">
       <link rel="stylesheet" href="components/modal/modal.css">
+      <link rel="stylesheet" href="components/theme/css/animate/animate.css">
+      <link rel="stylesheet" href="components/theme/css/animate/animate.min.css">
+      <link rel="stylesheet" href="components/theme/css/jquery-ui.min.css">
+      <link rel="stylesheet" href="components/theme/css/theme-default.css">
+      <link rel="stylesheet" href="components/theme/custom/custom.css">
       <!-- endinjector -->
     <!-- endbuild -->
   </head>
@@ -54,13 +63,24 @@
       <!-- bower:js -->
       <script src="bower_components/jquery/dist/jquery.js"></script>
       <script src="bower_components/angular/angular.js"></script>
-      <script src="bower_components/angular-resource/angular-resource.js"></script>
-      <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-      <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
       <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-      <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+      <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+      <script src="bower_components/angular-resource/angular-resource.js"></script>
+      <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+      <script src="bower_components/angular-toggle-switch/angular-toggle-switch.js"></script>
       <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+      <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+      <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+      <script src="bower_components/lodash/dist/lodash.compat.js"></script>
       <!-- endbower -->
+	  <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+	  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	  <script src="bower_components/coverflow/jquery.coverflow.js"></script>
+		<!-- Optionals -->
+		<script src="bower_components/coverflow/jquery.interpolate.js"></script>
+		<script src="bower_components/coverflow/jquery.touchSwipe.min.js"></script>
+		<script src="bower_components/coverflow/reflection.js"></script>
+      <script src="bower_components/jQuery-ui-Slider-Pips/dist/jquery-ui-slider-pips.min.js"></script>
     <!-- endbuild -->
 
         
@@ -74,13 +94,24 @@
           <script src="app/account/signup/signup.controller.js"></script>
           <script src="app/admin/admin.controller.js"></script>
           <script src="app/admin/admin.js"></script>
+          <script src="app/main/campaign/campaign.controller.js"></script>
+          <script src="app/main/collection/collection.controller.js"></script>
+          <script src="app/main/collection/manage/managecollection.controller.js"></script>
+          <script src="app/main/collection/new/newcollection.controller.js"></script>
+          <script src="app/main/dash/dash.controller.js"></script>
+          <script src="app/main/glance/glance.controller.js"></script>
+          <script src="app/main/inventory/inventory.controller.js"></script>
           <script src="app/main/main.controller.js"></script>
           <script src="app/main/main.js"></script>
           <script src="components/auth/auth.service.js"></script>
           <script src="components/auth/user.service.js"></script>
+          <script src="components/datepicker/bootstrap-datepicker.js"></script>
+          <script src="components/datepicker/datepicker.directive.js"></script>
           <script src="components/modal/modal.service.js"></script>
           <script src="components/mongoose-error/mongoose-error.directive.js"></script>
           <script src="components/navbar/navbar.controller.js"></script>
+          <script src="components/sidebar/sidebar.controller.js"></script>
+          <script src="components/sidebar/sidebarRight.controller.js"></script>
           <!-- endinjector -->
         <!-- endbuild -->
 </body>

@@ -21,7 +21,7 @@ angular.module('savvyAppApp')
         var deferred = $q.defer();
 
         $http.post('/auth/local', {
-          email: user.email,
+          username: user.username,
           password: user.password
         }).
         success(function(data) {
@@ -101,6 +101,24 @@ angular.module('savvyAppApp')
         return currentUser;
       },
 
+      getCurrentUserAsync: function (cb, force) {
+          if (!!force) {
+              if ($cookieStore.get('token')) {
+                  currentUser = User.get();
+              }
+          }
+          if(currentUser.hasOwnProperty('$promise')) {
+              currentUser.$promise.then(function() {
+                  cb(currentUser);
+              }).catch(function() {
+                  cb(currentUser);
+              });
+          } else if(currentUser.hasOwnProperty('role')) {
+              cb(currentUser);
+          } else {
+              cb(currentUser);
+          }
+      },
       /**
        * Check if a user is logged in
        *

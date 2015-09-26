@@ -10,6 +10,7 @@ exports.setup = function (User, config) {
       User.findOne({
         username: username
       }, function(err, user) {
+        console.log(err, user);
         if (err) return done(err);
 
         if (!user) {

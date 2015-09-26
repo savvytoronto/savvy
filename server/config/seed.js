@@ -56,7 +56,7 @@ var generateUser = function (store, cb) {
       provider: 'local',
       username: 'breaton',
       email: 'test@test.com',
-      password: 'bananarepublic',
+      password: 'banana',
       store_id: store._id
     }, {
       provider: 'local',

@@ -1,0 +1,164 @@
+
+.page-container .page-content-right-bar {
+	margin-right: 220px;
+}
+
+#MainMenu > div.list-group > a, .submenu > a {
+	border:none;
+	background: none;
+	display: block;
+    width: 100%;
+    line-height: 19px;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 15px 10px 15px 15px;
+    text-decoration: none;
+    border-bottom: 1px solid #2f3c48;
+    vertical-align: text-bottom;
+}
+
+#MainMenu > div.list-group > a:hover, #MainMenu > div.list-group > a:focus, #MainMenu > div.list-group > a:active {
+	background: #3d4e5d;
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
+
+#MainMenu > div.list-group > a.xn-openable::before {
+    position: absolute;
+    font-family: "FontAwesome";
+    content: "\f107";
+    font-size: 14px;
+    width: 20px;
+    height: 20px;
+    color: #ffffff;
+    right: 0px;
+    top: 17px;
+    cursor: pointer;
+}
+
+#MainMenu > div.list-group {
+	background: none;
+    border-radius: 0;
+    border: none;
+}
+
+.submenu {
+	background: #273541;
+}
+
+.submenu > a {
+    color: #cccccc;
+    font-size: 12px;
+    line-height: 19px;
+    font-weight: 400;
+    padding: 12px 10px;
+    border-bottom-color: #23303b;
+	padding-left: 25px;
+}
+.submenu > a:hover, .submenu > a:focus, .submenu > a:active {
+    background: #23303b;
+    color: #ffffff;
+	
+}
+
+.page-sidebar-right .profile .profile-image img {
+	width: 50px;
+}
+
+.page-sidebar-right h1, .page-sidebar-right h2, .page-sidebar-right h3, .page-sidebar-right h4, .page-sidebar-right h5, .page-sidebar-right p, .page-sidebar-right a {
+	color: #fff;
+	text-align:center;
+}
+
+.coverflow img {
+	width: 80px;
+}
+
+.ui-slider-float .ui-slider-tip {
+    visibility: visible;
+    opacity: 1;
+    top: -30px;
+    background: #33414e;
+    color:#fff;
+}
+
+.ui-widget-header {
+    background: #33414e;
+}
+
+.btn-blue, .btn-blue:focus, .btn-blue:active {
+        background: #33414e;
+    color: #fff;
+    font-size: 17px;
+    padding: 10px 23px;
+}
+
+.page-sidebar-right .x-navigation li .fa {
+    font-size: 60px;
+    color: #fff;
+    margin:0 6px;
+}
+
+.profile {
+    padding: 10px 10px;
+}
+
+.glance-box {
+    display: table-cell;
+    width: 240px;
+    height: 240px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.glance-box p {
+    width: 90%;
+    margin-bottom: 3px;
+}
+
+.page-content {
+    background: #fff;
+}
+
+.fatop, .fabottom {
+    display: block;
+}
+
+.fabottom {
+    margin-top: 12px;
+    font-size: 25px;
+}
+
+.fatop {
+    font-size: 60px;
+}
+
+.glance-content {
+    height: 160px;
+    padding-top: 25px;
+    width: 90%;
+    border: 1px solid black;
+    color: #33414e;
+}
+
+.overview-table td {
+    border: 2px solid #ddd;
+}
+
+.overview-table {
+    height: 240px;
+    width: 100%;
+    display: block;
+    overflow: scroll;
+    border: 2px solid;
+}
+
+a.glance-content, a.glance-content:hover {
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+}
