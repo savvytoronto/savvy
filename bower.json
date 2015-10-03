@@ -22,7 +22,10 @@
     "jquery-ui": "~1.11.4",
     "jQuery-ui-Slider-Pips": "jquery-ui-slider-pips#~1.10.7",
     "json3": "~3.3.1",
-    "lodash": "~2.4.1"
+    "lodash": "~2.4.1",
+    "countupjs": "https://github.com/kutou/countUp.js/archive/master.tar.gz",
+    "angular-chartjs": "https://github.com/kutou/angular-chart.js/archive/master.tar.gz",
+    "chartjs": "https://github.com/kutou/Chart.js/archive/master.tar.gz"
   },
   "devDependencies": {
     "angular-mocks": ">=1.2.*",
