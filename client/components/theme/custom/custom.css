@@ -107,19 +107,6 @@
     padding: 10px 10px;
 }
 
-.glance-box {
-    display: table-cell;
-    width: 240px;
-    height: 240px;
-    text-align: center;
-    vertical-align: middle;
-}
-
-.glance-box p {
-    width: 90%;
-    margin-bottom: 3px;
-}
-
 .page-content {
     background: #fff;
 }
@@ -137,28 +124,3 @@
     font-size: 60px;
 }
 
-.glance-content {
-    height: 160px;
-    padding-top: 25px;
-    width: 90%;
-    border: 1px solid black;
-    color: #33414e;
-}
-
-.overview-table td {
-    border: 2px solid #ddd;
-}
-
-.overview-table {
-    height: 240px;
-    width: 100%;
-    display: block;
-    overflow: scroll;
-    border: 2px solid;
-}
-
-a.glance-content, a.glance-content:hover {
-    display: block;
-    text-decoration: none;
-    cursor: pointer;
-}

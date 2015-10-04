@@ -1,0 +1,57 @@
+.glance-content {
+    height: 160px;
+    padding-top: 25px;
+    color: #33414e;
+}
+a.glance-content, a.glance-content:hover {
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+}
+.glance-box {
+    vertical-align: middle;
+}
+
+.glance-box p {
+    width: 90%;
+    margin-bottom: 3px;
+}
+
+.overview-table td {
+    
+}
+
+.overview-table {
+    height: 400px;
+    width: 100%;
+    display: block;
+    overflow: scroll;
+}
+
+.big-number {
+	font-size: 45px;
+	padding-right: 10px;
+}
+
+.sm-description {
+	font-size: 15px;
+	padding-left: 5px;
+}
+
+.glance-title {
+	padding:5px;
+	padding-left: 10px;
+	background-color: #ddd;
+}
+.savvy-green {
+	color: #5AD3D1;
+}
+.savvy-yellow {
+	color: #FFC870;
+}
+.savvy-blue {
+	color: #34AAD9;
+}
+.savvy-red {
+	color: #F7464A;
+}
