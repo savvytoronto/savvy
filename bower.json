@@ -23,6 +23,7 @@
     "jQuery-ui-Slider-Pips": "jquery-ui-slider-pips#~1.10.7",
     "json3": "~3.3.1",
     "lodash": "~2.4.1",
+    "countup-angularjs-directive": "https://github.com/kutou/countup-angularjs-directive/archive/master.tar.gz",
     "countupjs": "https://github.com/kutou/countUp.js/archive/master.tar.gz",
     "angular-chartjs": "https://github.com/kutou/angular-chart.js/archive/master.tar.gz",
     "chartjs": "https://github.com/kutou/Chart.js/archive/master.tar.gz"

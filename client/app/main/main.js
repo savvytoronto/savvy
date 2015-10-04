@@ -18,6 +18,11 @@ angular.module('savvyAppApp')
 		    templateUrl: 'app/main/campaign/campaign.html',
 	  	  	controller: 'CampaignCtrl'
 	  	})
+	  	.state('main.campaignEdit', {
+		    url: '/campaign/:id',
+		    templateUrl: 'app/main/campaign/campaign.html',
+	  	  	controller: 'CampaignCtrl'
+	  	})
 	  	.state('main.newcollection', {
 		    url: '/collection/new',
 		    templateUrl: 'app/main/collection/new/newcollection.html',
@@ -27,10 +32,10 @@ angular.module('savvyAppApp')
 		    url: '/collection/manage',
 		    templateUrl: 'app/main/collection/manage/managecollection.html',
 	  	  	controller: 'ManageCollectionCtrl'
+	  	})
+	  	.state('main.inventory', {
+		    url: '/inventory',
+		    templateUrl: 'app/main/inventory/inventory.html',
+	  	  	controller: 'InventoryCtrl'
 	  	});
-	  	// .state('main.inventory', {
-		  //   url: '/inventory',
-		  //   templateUrl: 'app/main/inventory/inventory.html',
-	  	//   	controller: 'InventoryCtrl'
-	  	// })
 });	

@@ -6,7 +6,9 @@ angular.module('savvyAppApp', [
   'ngSanitize',
   'ui.router',
   'ui.bootstrap',
-  'toggle-switch'
+  'toggle-switch',
+  'chart.js',
+  'ngCountup'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider

@@ -1,179 +1,173 @@
-<div class="">
-
+<div class="" style="border-left: 10px solid #34AAD9">
 	<div class="row">
+		<div class="col-sm-12">
+			<h1 style="padding-left:10px">At-A-Glance</h1>
+		</div>
+		<div class="col-sm-10 col-sm-offset-1" style="display:table-row; padding-top:20px;">
+			<div class="col-sm-6">
+				<div class="glance-box">
+		            <div class="pieChart">
+		                <h3 class="tableTitle glance-title">
+		                    Users
+		                </h3>
+		                <canvas id="usersPie"></canvas>
+		                <div id="usersLegend" class="pieLegend"></div>
+		            </div>
+		        </div>
+	        </div>
+	        <div class="col-sm-6">
+				<div class="glance-box">
+		            <div class="pieChart">
+		                <h3 class="tableTitle glance-title">
+		                    Products
+		                </h3>
+		                <canvas id="productsPie"></canvas>
+		                <div id="productsLegend" class="pieLegend"></div>
+		            </div>
+		        </div>
+	        </div>
+	    </div>
+	    <div class="col-sm-10 col-sm-offset-1" style="display:table-row; padding-top:20px;">
+	        <div class="col-sm-4">
+				<div class="glance-box">
+					<h3 class="glance-title">Ratio Today</h3>
+					<div class="glance-content">
+						<span id="ratio" class="dataNumber big-number ratio"></span>
+						<span class="sm-description">Swipe Ratio Today</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="glance-box">
+					<h3 class="glance-title">Budget Status</h3>
+					<div class="glance-content">
+						<span id="budget" class="dataNumber big-number budget"></span>
+						<span class="sm-description">Total Budget Today</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="glance-box">
+					<h3 class="glance-title">Average Rate of Return</h3>
+					<div class="glance-content">
+						<span id="return" class="dataNumber big-number return"></span>
+						<span class="sm-description">Multiplier on Savvy</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="col-sm-12" style="margin-bottom:30px;">
+			<h1 style="padding-left:10px">Campaign Overview</h1>
+		</div>
 		<div class="col-sm-10 col-sm-offset-1">
-			<h1 style="margin-bottom:3px;">At-A-Glance</h1>
-		</div>
-		<div class="col-sm-10 col-sm-offset-1" style="display:table-row;">
-			<div class="glance-box">
-				<p>Shoppers on Savvy</p>
-				<div class="glance-content" style="padding-top:6px;">
-					<img style="width:140px;" src="http://i.imgur.com/HNipEGb.png" />
-				</div>
+			<div class="table-responsive overview-table">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>
+								Active
+							</th>
+							<th>
+								Name
+							</th>
+							<th>
+								Collections
+							</th>
+							<th>
+								Budget
+							</th>
+							<th>
+								Duration Type
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="c in campaigns">
+							<td>
+								<toggle-switch
+					            ng-model="c.is_active"
+					            html="true"
+					            is-disabled="true"
+					            id="collectionSwitch3"
+					            class="switch-success switch-small"
+					            knob-label=""
+					            on-label=''
+					            off-label=''>
+					          </toggle-switch>
+				            </td>
+				            <td>
+				            	<span style="margin-left:10px;"> {{c.name}}</span>
+				            </td>
+			                <td>
+			                	<div class="checkbox" ng-repeat="collection in c.collections">
+								    <label>
+								      <input type="checkbox" disabled ng-model="collection.is_active"> {{collection.name}}
+								    </label>
+								  </div>
+			                </td>
+			                <!-- <td>
+			                	<div class="slider" id="slider1" name="slider1" style="margin-left:16px; width:160px; margin-bottom:0;">
+			                	</div>
+			                </td> -->
+			                <td style="text-align:center">
+			                	<h2>${{c.budget}}</h2>
+			                </td>
+			                <td style="text-align:center">
+			                	<span ng-if="c.duration_type==='Discrete'" style="font-size:42px;" class="fa fa-square savvy-green"></span>
+			                	<span ng-if="c.duration_type==='Staggered'" style="font-size:42px;" class="fa fa-circle savvy-red"></span>
+			                	<span ng-if="c.duration_type==='Continuous'" style="font-size:42px;" class="fa fa-star savvy-blue"></span>
+			                	<p>{{c.duration_type}}</p>
+			                </td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
-			<div class="glance-box">
-				<p>Ratio Today</p>
-				<div class="glance-content">
-					<h1>33%</h1>
-					<h3>Swipe Ratio Today</h3>
-				</div>
-			</div>
-			<div class="glance-box">
-				<p>Budget Status</p>
-				<div class="glance-content">
-					<h1>$550</h1>
-					<h3>Total Budget Today</h3>
-				</div>
-			</div>
-			<div class="glance-box">
-				<p>Average Rate of Return</p>
-				<div class="glance-content">
-					<h1>15.03</h1>
-					<h3>Multiplier on Savvy</h3>
-				</div>
-			</div>
-		</div>
-
-
-
-		<div class="col-sm-9 col-sm-offset-1" style="margin-bottom:30px;">
-			<h1>Campaign Overview</h1>
-			<table class="overview-table">
-				<tr>
-					<td width="176" style="padding-left:6px;"><toggle-switch
-			            ng-model="htmlSwitchStatus1"
-			            html="true"
-			            id="collectionSwitch3"
-			            class="switch-success switch-small"
-			            knob-label=""
-			            on-label='<i class="fa fa-thumbs-up" style="font-color:black"></i>'
-			            off-label='<i class="fa fa-thumbs-down" style="font-color:black"></i>'>
-			          </toggle-switch>
-	                <span style="margin-left:10px;"> Campaign 1</span></td>
-	                <td width="136" style="padding-left:16px;">
-	                	<div class="checkbox">
-						    <label>
-						      <input type="checkbox"> Collection 1
-						    </label>
-						  </div><div class="checkbox">
-						    <label>
-						      <input type="checkbox"> Collection 2
-						    </label>
-						  </div><div class="checkbox">
-						    <label>
-						      <input type="checkbox"> Collection 3
-						    </label>
-						  </div><div class="checkbox">
-						    <label>
-						      <input type="checkbox"> Collection 4
-						    </label>
-						  </div>
-	                </td>
-	                <td width="194" ><div class="slider" id="slider1" name="slider1" style="margin-left:16px; width:160px; margin-bottom:0;"></div></td>
-	                <td width="150" style="text-align:center"><h2>Budget</h2><h2>$250</h2></td>
-	                <td width="150" style="text-align:center"><h3>Duration Type:</h3><span style="font-size:42px;" class="fa fa-square"></span><p>Discrete</p></td>
-				</tr>
-				<tr>
-					<td width="176" style="padding-left:6px;"><toggle-switch
-			            ng-model="htmlSwitchStatus2"
-			            html="true"
-			            id="collectionSwitch2"
-			            class="switch-success switch-small"
-			            knob-label=""
-			            on-label='<i class="fa fa-thumbs-up" style="font-color:black"></i>'
-			            off-label='<i class="fa fa-thumbs-down" style="font-color:black"></i>'>
-			          </toggle-switch>
-	                <span style="margin-left:10px;"> Campaign 2</span></td>
-	                <td width="136" style="padding-left:16px;">
-	                	<div class="checkbox">
-						    <label>
-						      <input type="checkbox"> Collection 1
-						    </label>
-						  </div><div class="checkbox">
-						    <label>
-						      <input type="checkbox"> Collection 2
-						    </label>
-						  </div><div class="checkbox">
-						    <label>
-						      <input type="checkbox"> Collection 3
-						    </label>
-						  </div><div class="checkbox">
-						    <label>
-						      <input type="checkbox"> Collection 4
-						    </label>
-						  </div>
-	                </td>
-	                <td width="194" ><div class="slider" id="slider2" name="slider2" style="margin-left:16px; width:160px; margin-bottom:0;"></div></td>
-	                <td width="150" style="text-align:center"><h2>Budget</h2><h2>$360</h2></td>
-	                <td width="150" style="text-align:center"><h3>Duration Type:</h3><span style="font-size:42px;" class="fa fa-circle"></span><p>Continuous</p></td>
-				</tr>
-				<tr>
-					<td width="176" style="padding-left:6px;"><toggle-switch
-			            ng-model="htmlSwitchStatus3"
-			            html="true"
-			            id="collectionSwitch1"
-			            class="switch-success switch-small"
-			            knob-label=""
-			            on-label='<i class="fa fa-thumbs-up" style="font-color:black"></i>'
-			            off-label='<i class="fa fa-thumbs-down" style="font-color:black"></i>'>
-			          </toggle-switch>
-	                <span style="margin-left:10px;"> Campaign 3</span></td>
-	                <td width="136" style="padding-left:16px;">
-	                	<div class="checkbox">
-						    <label>
-						      <input type="checkbox"> Collection 1
-						    </label>
-						  </div><div class="checkbox">
-						    <label>
-						      <input type="checkbox"> Collection 2
-						    </label>
-						  </div><div class="checkbox">
-						    <label>
-						      <input type="checkbox"> Collection 3
-						    </label>
-						  </div><div class="checkbox">
-						    <label>
-						      <input type="checkbox"> Collection 4
-						    </label>
-						  </div>
-	                </td>
-	                <td width="194" ><div class="slider" id="slider3" name="slider3" style="margin-left:16px; width:160px; margin-bottom:0;"></div></td>
-	                <td width="150" style="text-align:center"><h2>Budget</h2><h2>$130</h2></td>
-	                <td width="150" style="text-align:center"><h3>Duration Type:</h3><span style="font-size:42px;" class="fa fa-square"></span><p>Discrete</p></td>
-				</tr>
-			</table>
 		</div>
 
 
+		<div class="col-sm-12" style="margin-bottom:30px;">
+			<h1 style="padding-left:10px">Quick Access</h1>
+		</div>
 
-		<div class="col-sm-10 col-sm-offset-1" style="display:table-row; padding-bottom:100px;">
-			<div class="glance-box">
-				<p>Create a New Collection</p>
-				<a ui-sref="main.newcollection" class="glance-content">
-					<span class="fa fa-shopping-cart fatop"></span>
-					<span class="fa fa-plus-square-o fabottom"></span>
-				</a>
+		<div class="col-sm-10 col-sm-offset-1" style="display:table-row; padding-bottom:100px;text-align:center;">
+			<div class="col-sm-3">
+				<div class="glance-box">
+					<h3>Create a New Collection</h3>
+					<a ui-sref="main.newcollection" class="glance-content savvy-green">
+						<span class="fa fa-shopping-cart fatop"></span>
+						<span class="fa fa-plus-square-o fabottom"></span>
+					</a>
+				</div>
 			</div>
-			<div class="glance-box">
-				<p>Create a New Campaign</p>
-				<a ui-sref="main.campaign" class="glance-content">
-					<span class="fa fa-flag-o fatop"></span>
-					<span class="fa fa-plus-square-o fabottom"></span>
-				</a>
+			<div class="col-sm-3">
+				<div class="glance-box">
+					<h3>Create a New Campaign</h3>
+					<a ui-sref="main.campaign" class="glance-content savvy-blue">
+						<span class="fa fa-flag-o fatop"></span>
+						<span class="fa fa-plus-square-o fabottom"></span>
+					</a>
+				</div>
 			</div>
-			<div ui-sref="main.inventory" class="glance-box">
-				<p>View/Update Inventory</p>
-				<a ui-sref="main.managecollection" class="glance-content">
-					<span class="fa fa-suitcase fatop"></span>
-					<span class="fa fa-plus-square-o fabottom"></span>
-				</a>
+			<div class="col-sm-3">
+				<div class="glance-box">
+					<h3>View/Update Inventory</h3>
+					<a ui-sref="main.managecollection" class="glance-content savvy-yellow">
+						<span class="fa fa-suitcase fatop"></span>
+						<span class="fa fa-plus-square-o fabottom"></span>
+					</a>
+				</div>
 			</div>
-			<div class="glance-box">
-				<p>Generate Campaign Report</p>
-				<a ui-sref="main.Report" class="glance-content">
-					<span class="fa fa-copy fatop"></span>
-					<span class="fa fa-plus-square-o fabottom"></span>
-				</a>
+			<div class="col-sm-3">
+				<div class="glance-box">
+					<h3>Campaign Report</h3>
+					<a ui-sref="main.Report" class="glance-content savvy-red">
+						<span class="fa fa-copy fatop"></span>
+						<span class="fa fa-plus-square-o fabottom"></span>
+					</a>
+				</div>
 			</div>
 		</div>
 
@@ -183,4 +177,18 @@
 	</div>
 
 </div>
-<!-- <div ng-controller="SidebarRightCtrl" ng-include="'components/sidebar/sidebarRight.html'"></div> -->
+<style>
+
+    .glance-content h1{
+    	font-size: 45px;
+    }
+	.glance-content .return {
+		color: #5AD3D1;
+	}
+	.glance-content .ratio {
+		color: #FFC870;
+	}
+	.glance-content .budget {
+		color: #34AAD9;
+	}
+</style>
